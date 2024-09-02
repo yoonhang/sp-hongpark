@@ -1,0 +1,19 @@
+{{>layouts/header}}
+
+<!--action: 어디로 보낼지 method: 어떻게 보낼지-->
+    <form class="container" action="/articles/create" method="post">
+        <div class="mb-3">
+            <label class="form-label">제목</label>
+            <input type="text" class="form-control" name="title">
+            <!--데이터 전송할 때, name 값에 DTO 랑 같은 객체 이름 적어줘야 함(private로 적어준거)-->
+        </div>
+        <div class="mb-3">
+            <label class="form-label">내용</label>
+            <textarea class="form-control" cols="30" rows="3" name="content"></textarea>
+            <!--데이터 전송할 때, name 값에 DTO 랑 같은 객체 이름 적어줘야 함(private로 적어준거)-->
+        </div>
+        <button type="submit" class="btn btn-primary">제출</button>
+        <a href="/articles">Back</a>
+    </form>
+
+{{>layouts/footer}}

@@ -1,0 +1,30 @@
+{{>layouts/header}}
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Title</th>
+        <th scope="col">Content</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <!--Model 에 등록된 데이터는 #으로 불러옴-->
+    {{#article}}
+    <tr>
+        <th scope="row">{{id}}</th>
+        <td>{{title}}</td>
+        <td>{{content}}</td>
+    </tr>
+    {{/article}}
+    <!-- 여기까지 데이터를 사용할거심 -->
+
+    </tbody>
+</table>
+<a href="/articles/{{article.id}}/edit" class="btn btn-primary">Edit</a>
+<!-- 아직  delete 는 사용하지 않음. GET, a 태그, 즉 링크를 사용할것임 (좀 나중에 js 로 제대로 배울듯) -->
+<a href="/articles/{{article.id}}/delete" class="btn btn-danger">Delete</a>
+
+<a href="/articles">Go to Article List</a>
+{{>layouts/footer}}
